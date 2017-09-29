@@ -9,15 +9,6 @@ import java.util.*;
 @Service
 public class JudgingQueueServiceImpl implements JudgingQueueService {
 
-    public String toString(List<Contestant> winners) {
-        StringBuilder sb = new StringBuilder();
-
-        winners.forEach(c -> sb.append(c.getNumber()).append(" ").append(c.getSolvedProblems().size()).append(" ")
-                .append(c.getPenalty()).append("\n"));
-
-        return sb.toString();
-    }
-
     @Override
     public JudgingQueue parse(String judgingQueue) {
         return new JudgingQueue(judgingQueue);
